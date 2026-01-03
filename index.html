@@ -1,10 +1,10 @@
 <script>
 /* 8L8 數據基地 - 滿血復活版 */
 
-// 1. 【底數】
+// 1. 【2025 底數】
 var base = ["2025/01/01", [31,37,25,18,30,14,16,19,22,10,15,12,18,9,21,13,17,25,30,4,11,22,24,6,8,15,12,18,20,14,9,11,7,16,23,18,10,12,15]];
 
-// 2. 【更新區】 (每天新號碼就補在最上面這行)
+// 2. 【2026 更新區】(以後每天新號碼就貼在最上面這行)
 var allHistory = [
   ["2026/01/03","(六)",["05","12","23","31","38"]],
   ["2026/01/02","(五)",["17","18","25","36","39"]]
@@ -20,7 +20,7 @@ allHistory.forEach(item => {
     });
 });
 
-// 4. 【變出黑底綠字網頁】
+// 4. 【變出黑底綠字畫面】
 window.onload = function() {
     document.body.style.cssText = "background:#000; color:#0f0; padding:20px; font-family:monospace; line-height:1.8;";
     document.body.innerHTML = `
@@ -28,7 +28,7 @@ window.onload = function() {
         <p style="font-size:22px;">最新日期：${myday[0]} ${myday[1]}</p>
         <p style="font-size:22px;">最新號碼：<span style="color:#fff;">${myday[2].join(' , ')}</span></p>
         <hr>
-        <p><strong>總次數統計 (按2)：</strong></p>
+        <p style="color:#0f0;"><strong>總次數統計 (按2)：</strong></p>
         <div style="background:#111; padding:15px; word-break:break-all; font-size:24px; color:#0f0; border:1px solid #222;">
             ${times.join(' , ')}
         </div>
