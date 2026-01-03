@@ -1,15 +1,10 @@
-/* 8L8L8 數據基地 - 唯一總部 */
-
-// 1. 【2025 底數】 (請確認這 39 個數字是否正確)
+<script>
+/* 8L8 數據基地 */
 var base = ["2025/01/01", [31,37,25,18,30,14,16,19,22,10,15,12,18,9,21,13,17,25,30,4,11,22,24,6,8,15,12,18,20,14,9,11,7,16,23,18,10,12,15]];
-
-// 2. 【2026 更新區】 (每天的新號碼直接往這補)
 var allHistory = [
   ["2026/01/03","(六)",["05","12","23","31","38"]],
   ["2026/01/02","(五)",["17","18","25","36","39"]]
 ];
-
-// 3. 【自動加法邏輯】
 var myday = allHistory[0];
 var times = [...base[1]]; 
 allHistory.forEach(item => {
@@ -18,20 +13,17 @@ allHistory.forEach(item => {
         if (idx >= 0 && idx < 39) times[idx]++;
     });
 });
-
-// 4. 【網頁顯示功能】
-if (typeof document !== 'undefined' && document.body) {
-    window.onload = function() {
-        document.body.style.cssText = "background:#000; color:#0f0; padding:20px; font-family:monospace; line-height:1.6;";
-        document.body.innerHTML = `
-            <h2 style="color:red; border-bottom:1px solid #333;">8L8L8 數據基地</h2>
-            <p style="font-size:20px;">最新日期：${myday[0]} ${myday[1]}</p>
-            <p style="font-size:20px;">最新號碼：${myday[2].join(' , ')}</p>
-            <hr>
-            <p><strong>總次數統計 (按2)：</strong></p>
-            <div style="background:#111; padding:15px; word-break:break-all; font-size:18px; border:1px solid #222;">
-                ${times.join(' , ')}
-            </div>
-        `;
-    }
+window.onload = function() {
+    document.body.style.cssText = "background:#000; color:#0f0; padding:20px; font-family:monospace; line-height:1.8;";
+    document.body.innerHTML = `
+        <h2 style="color:red; border-bottom:1px solid #333;">8L8 數據總部</h2>
+        <p style="font-size:20px;">最新日期：${myday[0]} ${myday[1]}</p>
+        <p style="font-size:20px;">最新號碼：${myday[2].join(' , ')}</p>
+        <hr>
+        <p><strong>總次數統計 (按2)：</strong></p>
+        <div style="background:#111; padding:15px; word-break:break-all; font-size:18px; border:1px solid #222;">
+            ${times.join(' , ')}
+        </div>
+    `;
 }
+</script>
