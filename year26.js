@@ -10,4 +10,4 @@ var year26 = [
 ["2026/01/01","15","16","18","29","36"]
 ];
 
-console.log("year26呼叫！year26呼叫器");
+console.log("year26呼叫！");
